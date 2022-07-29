@@ -18,7 +18,9 @@ export const LogInUser: (username:string, password: string) => Promise<string> =
 
 export const GetOrders = (token:string) => { 
     const config = {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` }
     };
     return axios.get('/orders', config) 
     .then(response => console.log(response))

@@ -13,14 +13,14 @@ const FormLogIn: FC<{value1:string, onChange1:(e: any) => void,
     return(
       <div>
         <TitleForm>Daily Insulines</TitleForm>
-        <LabelForm>Usuario</LabelForm> 
+        <LabelForm>Usuario  </LabelForm> 
         <InputForm
             type='text'
             value={value1}
             onChange={onChange1}
             placeholder='Usuario'/>
 
-        <LabelForm>Ingresa tu clave aqui</LabelForm> 
+        <LabelForm>Password  </LabelForm> 
 
         <InputForm
           type="password"

@@ -1,5 +1,7 @@
 // import { useState } from "react";
 import jwt_decode from 'jwt-decode';
+import { Link } from 'react-router-dom';
+import { ButtonForm } from '../components/atom/button/buttonForm';
 import Permissions  from '../modelsclass/permissionsTemplate'
 import { GetOrders, DeleteOrders, CreateOrders } from '../services/insulineServices';
 
@@ -9,17 +11,11 @@ function ModificationPage (){
         const localValue = window.localStorage.getItem('access_token'); 
         const decodeValue:object = jwt_decode(localValue!)
 
-        console.log('este es el codigo decodificado')
-        console.log(decodeValue)
-
         const permissionsValue: Array<string> = decodeValue.permissions
-        console.log('debes tener el array de los permisos')
-        console.log(permissionsValue)
 
-        const getPermission = () => {
+        const getPermission = async (token:string) => {
             if(permissionsValue.includes(Permissions.read)){
-                console.log('tienes permiso para leer')
-                return GetOrders(localValue!)
+                await console.log(GetOrders(token))
             }else{
                 console.log('vete!!!')
             }}
@@ -60,11 +56,13 @@ function ModificationPage (){
     return (
     <>
     <div>
-      <button onClick={async () => await {getPermission}}> get Orders</button>
-      <button onClick={async () => await {deletePermission}}>Delete Orders</button>
-      <button onClick = {async () => await {createPermission}}>Create Permissions </button>
-
-      <h3>Modification page yuujuuu  !!!!!!</h3>
+      <h3>Choose the modification you want to do</h3>
+      <h6>Those are your permissions</h6>
+      <ButtonForm onClick={() => {getPermission(localValue!)}}> get Orders</ButtonForm>
+      <ButtonForm onClick={async () => await {deletePermission}}>Delete Orders</ButtonForm>
+      <ButtonForm onClick = {async () => await {createPermission}}>Create an Order </ButtonForm>
+      <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
+      
     </div>
     </>   
     )

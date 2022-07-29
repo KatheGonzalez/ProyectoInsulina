@@ -1,5 +1,5 @@
-import { FC, ReactNode } from "react";
-import {  TitleStyle } from "../../assets/styles/stylesComponents.style";
+import { FC, ReactNode } from 'react';
+import {  TitleStyle } from './title.Style';
 
 export const TitleForm: FC<{children: ReactNode}> = ({children}) => {
     return (

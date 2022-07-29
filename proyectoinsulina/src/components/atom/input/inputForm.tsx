@@ -1,8 +1,9 @@
 
-import { FC } from "react";
-import {  InputStyle  } from "../../assets/styles/input.Style";
+import { FC } from 'react';
+import {  InputStyle  } from './input.Style';
+import { InputFormData } from './inputFormData';
 
-export const InputForm: FC<{value: string, onChange:(e:any) => any, placeholder: string, type: string}> = (props) => {
+export const InputForm: FC<InputFormData> = (props) => {
     return (
         <>
             <InputStyle

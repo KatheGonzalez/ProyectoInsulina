@@ -2,53 +2,96 @@ import axios from 'axios';
 
 // const API = 'http://localhost:2000';
 
+// LOGIN REQUEST
+
 export const LogInUser: (username:string, password: string) => Promise<string> = (username:string, password: string) => {
     const body = {
-        username: username,
-        password: password
+            username: username,
+            password: password
     }
     return axios.post<{access_token:string}>(`/users/login`, body)
         .then(response => response.data.access_token)
     // .then(response => (jwt_decode(response.data.access_token)))
 }
 
-export const GetOrders = () => { 
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiaW5zdWxpbl9hcHA6cmVhZF9vcmRlcnMiLCJpbnN1bGluX2FwcDpkZWxldGVfb3JkZXJzIl0sImlhdCI6MTY1ODg4NTk1MSwiZXhwIjoxNjU4ODkxOTUxfQ.14Cd7-FSbzH5PyLzbd5wk_D8N4ozlc2raspxYOm6mfY';
+// GET ORDER REQUEST 
+
+export const GetOrders = (token:string) => { 
     const config = {
-        headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${token}` }
     };
     return axios.get('/orders', config) 
     .then(response => console.log(response))
 }
 
+// DELETE ORDER REQUEST
 
-// export const CreateOrders = ({
-//     dni: 1032488869,
-//             cellphone: 3004088683,
-//             full_name: "Kathe Gonzalez",
-//             place: "Cra 123 Calle no papito sur",
-//             date_requested: "25/07/2022",
-//             state: "CREATED",
-//             count: 52,
-//             brand: "Apidra",
-//             date_collected: null
-// }) => {
-//     const body = {
-        
-//             dni: 1032488869,
-//             cellphone: 3004088683,
-//             full_name: "Kathe Gonzalez",
-//             place: "Cra 123 Calle no papito sur",
-//             date_requested: "25/07/2022",
-//             state: "CREATED",
-//             count: 52,
-//             brand: "Apidra",
-//             date_collected: null
-//         }
-//     return axios.post('/orders', body)
-//     .then(response => console.log(response))
-// }
+export const DeleteOrders = (token: string, id: string) => {
+    const config = {
+            body : {id : id},
+            headers: { Authorization: `Bearer ${token}`}
+    }
+    return axios.delete('/orders/delete', config)
+    .then(response => console.log(response))
+}
 
-// export const UpdateOrders = () => {
+// CREATE ORDER REQUEST
 
-// }
+export const CreateOrders = (
+            token: string,
+            id: string,
+            cellphone: number,
+            full_name: string,
+            place: string,
+            date_requested: Date,
+            state: string,
+            count: number, 
+            brand: string,
+            date_collected: null) => {
+
+    const config = {
+        body : {
+            id: id,
+            cellphone: cellphone,
+            full_name: full_name,
+            place: place,
+            date_requested: date_requested,
+            state: state,
+            count: count, 
+            brand: brand,
+            date_collected: date_collected
+        },
+
+        headers : { Authorization: `Bearer ${token}` }
+    }
+    return axios.post('/orders', config)
+    .then(response => console.log(response))
+}
+
+// UPDATE ORDER REQUEST
+
+export const UpdateOrders = (
+            token: string,
+            id: string,
+            count: number,
+            state: number,
+            brand: string,
+            data_collected: Date
+) => {
+    const config =  {
+        body : {
+            token: token,
+            id: id,
+            count: count,
+            state: state,
+            brand: brand,
+            data_collected: data_collected
+        },
+        headers : { Authorization: `Bearer ${token}`}
+    }
+
+    return axios.put('/orders/update', config)
+    .then(response => console.log(response))
+}
+
+

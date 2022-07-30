@@ -1,9 +1,9 @@
-import { InputForm } from "../../atom/input/inputForm"
-import { LabelForm } from "../../atom/label/labelForm"
+import { InputForm } from '../../atom/input/inputForm';
+import { LabelForm } from '../../atom/label/labelForm';
 import { ButtonForm } from '../../atom/button/buttonForm';
 import { TitleForm } from '../../atom/title/titleForm';
 import { Link }  from 'react-router-dom';
-import { FC } from "react";
+import { FC } from 'react';
 
 const FormLogIn: FC<{value1:string, onChange1:(e: any) => void,
         value2:string, onChange2:(e: any) => void,

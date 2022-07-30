@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import LogInPage from './pages/logInPage';
 import ModificationPage from './pages/modificationPage';
-import PermissionPage from './pages/permissionPage';
-import OrdersPage from './pages/ordersPage';
+import PermissionPage from './pages/updateOrder';
+import OrdersPage from './pages/createOrder';
+import DeleteOrderPage from './pages/deleteOrder'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -19,6 +20,7 @@ root.render(
         <Route path="Modification" element={<ModificationPage/>}></Route>
         <Route path="Orders" element = {<OrdersPage/>}></Route>
         <Route path="Permissions" element = {<PermissionPage/>}></Route>
+        <Route path="Delete" element = {<DeleteOrderPage/>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

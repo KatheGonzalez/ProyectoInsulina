@@ -1,9 +1,9 @@
 
-export class deleteOrder {
-    dni : string|number;
-    state: string;
-    constructor(dni=0, state=''){
-        this.dni = dni;
+export class DeleteOrder {
+        id: string;
+        state: string;
+    constructor(id='', state:''){
+        this.id = id;
         this.state = state
     }
 }

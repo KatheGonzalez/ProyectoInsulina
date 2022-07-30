@@ -1,11 +1,10 @@
 
-export class LogIn {
+export class Decode {
+    username: string;
+    permissions: Array<string>
 
-  username: string;
-  password: string
-  
-  constructor(username: string, password: ''){
+  constructor(username: string, permissions: Array<string>){
     this.username = username;
-    this.password = password
+    this.permissions = permissions
   }
 }

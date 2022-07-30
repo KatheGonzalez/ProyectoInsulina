@@ -1,12 +1,12 @@
 
 export class UpdateOrder {
-    id: string | number;
+    id: string;
     count: number;
     state: string;
     brand: string;
     date_collected: string;
 
-    constructor(id = 0, count = 0, state = '' ,brand = '', date_collected = ''){
+    constructor(id='', count=0, state='' ,brand='', date_collected=''){
         this.id = id;
         this.count = count;
         this.state = state;

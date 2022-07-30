@@ -5,16 +5,16 @@ export function useLocalStorage (key: any, initialValue: any){
         // devolver el valor del estado inciial, recuperar 
         try {
             const item = window.localStorage.getItem(key)
-            return item ? JSON.parse(item) : initialValue
+            return item ? item : initialValue
         } catch (error) {
             return initialValue
         }
     })
 
-    const setValue: (value:string | number | readonly string [] | undefined) => void = value => {
+    const setValue: (value:string | readonly string [] | undefined) => void = value => {
         try{
             setStoredValue(value)
-            window.localStorage.setItem(key, JSON.stringify(value))
+            window.localStorage.setItem(key, value as string) 
         }catch (error){
             console.error(error)
         }

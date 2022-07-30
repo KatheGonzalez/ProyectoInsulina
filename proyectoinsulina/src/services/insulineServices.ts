@@ -1,8 +1,11 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { CreateOrder } from '../modelsclass/createTemplate';
+import { DeleteOrder } from '../modelsclass/deleteTemplate';
+import { UpdateOrder } from '../modelsclass/updateTemplate';
 
 // const API = 'http://localhost:2000';
 
-// LOGIN REQUEST
+// LOGIN REQUEST  -- VERIFICADO
 
 export const LogInUser: (username:string, password: string) => Promise<string> = (username:string, password: string) => {
     const body = {
@@ -11,88 +14,51 @@ export const LogInUser: (username:string, password: string) => Promise<string> =
     }
     return axios.post<{access_token:string}>(`/users/login`, body)
         .then(response => response.data.access_token)
-    // .then(response => (jwt_decode(response.data.access_token)))
 }
 
-// GET ORDER REQUEST 
+// GET ORDER REQUEST -- VERIFICADO
 
 export const GetOrders = (token:string) => { 
     const config = {
             headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}` }
+                Authorization: `Bearer ${token}`}
     };
     return axios.get('/orders', config) 
     .then(response => console.log(response))
 }
 
-// DELETE ORDER REQUEST
+// DELETE ORDER REQUEST 
 
-export const DeleteOrders = (token: string, id: string) => {
+export const DeleteOrders = (token: string, deleteOrder: DeleteOrder) => {
     const config = {
-            body : {id : id},
             headers: { Authorization: `Bearer ${token}`}
     }
-    return axios.delete('/orders/delete', config)
+    return axios.put('/orders/delete', deleteOrder, config)
     .then(response => console.log(response))
 }
 
 // CREATE ORDER REQUEST
 
-export const CreateOrders = (
-            token: string,
-            id: string,
-            cellphone: number,
-            full_name: string,
-            place: string,
-            date_requested: Date,
-            state: string,
-            count: number, 
-            brand: string,
-            date_collected: null) => {
+type response = {
+    data:any,
+    notification:any
+}
 
-    const config = {
-        body : {
-            id: id,
-            cellphone: cellphone,
-            full_name: full_name,
-            place: place,
-            date_requested: date_requested,
-            state: state,
-            count: count, 
-            brand: brand,
-            date_collected: date_collected
-        },
-
-        headers : { Authorization: `Bearer ${token}` }
+export const CreateOrders = ( token: string, newOrder: CreateOrder ) => {
+    const config: AxiosRequestConfig<CreateOrder> = {
+        headers : { Authorization: `Bearer ${token}` },
     }
-    return axios.post('/orders', config)
-    .then(response => console.log(response))
+    return axios.post<response, AxiosResponse<response>, CreateOrder>('/orders', newOrder, config) 
+    .then(response => response.data.data.message)
 }
 
 // UPDATE ORDER REQUEST
 
-export const UpdateOrders = (
-            token: string,
-            id: string,
-            count: number,
-            state: number,
-            brand: string,
-            data_collected: Date
-) => {
+export const UpdateOrders = (token: string, updateOrder:UpdateOrder) => {
     const config =  {
-        body : {
-            token: token,
-            id: id,
-            count: count,
-            state: state,
-            brand: brand,
-            data_collected: data_collected
-        },
         headers : { Authorization: `Bearer ${token}`}
     }
-
-    return axios.put('/orders/update', config)
+    return axios.put('/orders/update', updateOrder, config)
     .then(response => console.log(response))
 }
 

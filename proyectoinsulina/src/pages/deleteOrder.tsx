@@ -1,5 +1,5 @@
 import { Decode } from "../modelsclass/loginTemplate";
-import { DeleteOrders, GetOrders } from "../services/insulineServices";
+import { DeleteOrders } from "../services/insulineServices";
 import jwt_decode from 'jwt-decode';
 import Permissions  from '../modelsclass/permissionsTemplate'
 import {DeleteOrder} from "../modelsclass/deleteTemplate";

@@ -11,6 +11,8 @@ export const InputForm: FC<InputFormData> = (props) => {
                 onChange={props.onChange}
                 value = {props.value}
                 placeholder = {props.placeholder}
+                name = {props.name}
+                autoComplete = {props.autocomplete}
             ></InputStyle>
         </>
         

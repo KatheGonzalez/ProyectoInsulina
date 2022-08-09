@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export function useLocalStorage (key: any, initialValue: any){
     const [storedValue, setStoredValue] = useState(() => {
         // devolver el valor del estado inciial, recuperar 
         try {
-            const item = window.localStorage.getItem(key)
+            const item = window.localStorage.getItem(key);
             return item ? item : initialValue
         } catch (error) {
             return initialValue
@@ -19,6 +19,5 @@ export function useLocalStorage (key: any, initialValue: any){
             console.error(error)
         }
     }
-    console.log(storedValue)
     return [storedValue, setValue]   
 }

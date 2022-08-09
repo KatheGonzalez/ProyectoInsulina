@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { CreateOrder } from '../modelsclass/createTemplate';
+import { CreateOrder } from '../modelsclass/createOrder';
 import jwt_decode from 'jwt-decode';
-import Permissions  from '../modelsclass/permissionsTemplate';
+import Permissions  from '../modelsclass/permissions';
 import FormNewOrder from '../components/molecule/formTemplate/formNewOrder';
-import { Decode } from '../modelsclass/loginTemplate';
+import { Decode } from '../modelsclass/validation';
 import { ButtonForm } from '../components/atom/button/buttonForm';
 import { Link } from 'react-router-dom';
 import { CreateOrders } from '../services/insulineServices';
@@ -13,7 +13,7 @@ function OrdersPage (){
     const decodeValue:Decode = jwt_decode<Decode>(localValue!);
     const permissionsValue: Array<string> = decodeValue.permissions;
 
-    const [newOrder, setNewOrder] = useState(new CreateOrder('', 0, '', '','','',0,''));
+    const [newOrder, setNewOrder] = useState(new CreateOrder('','', 0, '', '','','',0,''));
     const changeValue3 = async () => await createPermission(localValue!, newOrder);
 
     const createPermission = async (token: string, newOrder: CreateOrder) => {

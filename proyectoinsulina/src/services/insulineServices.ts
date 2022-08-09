@@ -1,19 +1,17 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { CreateOrder } from '../modelsclass/createTemplate';
-import { DeleteOrder } from '../modelsclass/deleteTemplate';
-import { UpdateOrder } from '../modelsclass/updateTemplate';
-
-// const API = 'http://localhost:2000';
+import { CreateOrder } from '../modelsclass/createOrder';
+import { LogIn } from '../modelsclass/login';
 
 // LOGIN REQUEST  -- VERIFICADO
 
-export const LogInUser: (username:string, password: string) => Promise<string> = (username:string, password: string) => {
+export const LoginUser: (user:LogIn) => Promise<any> = (user:LogIn) => {
     const body = {
-            username: username,
-            password: password
+            username: user.user,
+            password: user.password
     }
     return axios.post<{access_token:string}>(`/users/login`, body)
         .then(response => response.data.access_token)
+        .catch(error => error.response.status)
 }
 
 // GET ORDER REQUEST -- VERIFICADO
@@ -24,17 +22,17 @@ export const GetOrders = (token:string) => {
                 Authorization: `Bearer ${token}`}
     };
     return axios.get('/orders', config) 
-    .then(response => console.log(response))
+    .then(response => console.log(response.data.data))
 }
 
 // DELETE ORDER REQUEST 
 
-export const DeleteOrders = (token: string, deleteOrder: DeleteOrder) => {
+export const DeleteOrders = (token: string, deleteOrder: CreateOrder) => {
     const config = {
             headers: { Authorization: `Bearer ${token}`}
     }
     return axios.put('/orders/delete', deleteOrder, config)
-    .then(response => console.log(response))
+    .then(response => response.data.data.message)
 }
 
 // CREATE ORDER REQUEST
@@ -54,7 +52,7 @@ export const CreateOrders = ( token: string, newOrder: CreateOrder ) => {
 
 // UPDATE ORDER REQUEST
 
-export const UpdateOrders = (token: string, updateOrder:UpdateOrder) => {
+export const UpdateOrders = (token: string, updateOrder: CreateOrder) => {
     const config =  {
         headers : { Authorization: `Bearer ${token}`}
     }

@@ -1,7 +1,9 @@
 
 export interface InputFormData {
     type: string, 
+    name: string | undefined,
     placeholder: string, 
-    value: string | number, 
-    onChange:(event: any) => any
+    value: string | undefined | number, 
+    onChange:(event: any) => any,
+    autocomplete?: string
 }

@@ -22,7 +22,7 @@ export const GetOrders = (token:string) => {
                 Authorization: `Bearer ${token}`}
     };
     return axios.get('/orders', config) 
-    .then(response => console.log(response.data.data))
+    .then(response => response.data.data)
 }
 
 // DELETE ORDER REQUEST 

@@ -1,0 +1,10 @@
+
+.container-orders{
+    background-color: var(--hospital-green);
+    width: auto;
+    font-size: var(--sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

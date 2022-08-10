@@ -8,7 +8,7 @@ import { ButtonForm } from '../components/atom/button/buttonForm';
 import { Link } from 'react-router-dom';
 import { CreateOrders } from '../services/insulineServices';
 
-function OrdersPage (){
+function CreateOrderPage (){
     const localValue = window.localStorage.getItem('access_token'); 
     const decodeValue:Decode = jwt_decode<Decode>(localValue!);
     const permissionsValue: Array<string> = decodeValue.permissions;
@@ -30,4 +30,4 @@ function OrdersPage (){
     )
 }
 
-export default OrdersPage
+export default CreateOrderPage;

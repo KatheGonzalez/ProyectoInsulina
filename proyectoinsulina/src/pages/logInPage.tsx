@@ -5,6 +5,8 @@ import { useLocalStorage } from '../services/useLocalStorage';
 import { useNavigate } from 'react-router-dom';
 import { LogIn } from '../modelsclass/login';
 
+// LogInpage me trae el token de la persona y me lo almacena en el local storage 
+
 function LogInPage() {
   const [userLogged, setUserLogged] = useState(new LogIn('', ''));
   const [getUserToken, setGetUserToken] = useLocalStorage('access_token','') 
@@ -16,7 +18,7 @@ function LogInPage() {
       window.alert('Your password or user is incorrect');
     }else{
       setGetUserToken(userLogin);
-      navigate("/modification");
+      navigate("/Permissions");
     }
   }
 

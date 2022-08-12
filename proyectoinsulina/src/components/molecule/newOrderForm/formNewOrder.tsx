@@ -1,12 +1,10 @@
-import { Dispatch, FC } from 'react';
-import { CreateOrder } from '../../../modelsclass/createOrder';
+import { FC } from 'react';
 import { InputForm } from '../../atom/input/inputForm';
 import { LabelForm } from '../../atom/label/labelForm';
 import { TitleForm } from '../../atom/title/titleForm';
+import { FormNewOrderData } from './formNewOrderData';
 
-
-// const FormNewOrder: FC<{newOrder:CreateOrder, setNewOrder:(value:CreateOrder) => void}> = (props) => {  --1 FORMA 
-const FormNewOrder: FC<{newOrder:CreateOrder, setNewOrder:Dispatch<CreateOrder>}> = (props) => {
+const FormNewOrder: FC<FormNewOrderData> = (props) => {
     
     return(
         <form>

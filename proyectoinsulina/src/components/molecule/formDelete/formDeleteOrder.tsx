@@ -1,9 +1,9 @@
-import { Dispatch, FC } from 'react';
-import { CreateOrder } from '../../../modelsclass/createOrder';
+import { FC } from 'react';
 import { InputForm } from "../../atom/input/inputForm";
 import { LabelForm } from "../../atom/label/labelForm";
+import { FormDeleteData } from './formDeleteData';
 
-const DeleteOrderForm: FC<{deleteOrder:CreateOrder, setDeleteOrder:Dispatch<CreateOrder>}> = (props) => {
+const DeleteOrderForm: FC<FormDeleteData> = (props) => {
     return (
         <form>
         <LabelForm>Insert the ID you want to delete</LabelForm>
@@ -12,7 +12,7 @@ const DeleteOrderForm: FC<{deleteOrder:CreateOrder, setDeleteOrder:Dispatch<Crea
             name="id"/>
         <LabelForm>State</LabelForm>
         <InputForm
-            type='text' value={props.deleteOrder.state} onChange={event => props.setDeleteOrder({...props.deleteOrder, state:event.target.value})} placeholder='Delete'
+            type='text' value={props.deleteOrder.state} onChange={event => props.setDeleteOrder({...props.deleteOrder, state:event.target.value})}
             name="state"/>
         </form>
     )

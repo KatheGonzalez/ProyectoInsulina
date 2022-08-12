@@ -6,6 +6,7 @@ import decodeToken from '../services/decodeToken';
 import { TitleStyle } from '../components/atom/title/title.Style';
 
 function PermissionsVerificationPage(){
+    
     const{
         permissionsValue
     } = decodeToken();

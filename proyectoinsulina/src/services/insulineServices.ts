@@ -25,17 +25,7 @@ export const GetOrders = (token:string) => {
     .then(response => response.data.data)
 }
 
-// DELETE ORDER REQUEST 
-
-export const DeleteOrders = (token: string, deleteOrder: CreateOrder) => {
-    const config = {
-            headers: { Authorization: `Bearer ${token}`}
-    }
-    return axios.put('/orders/delete', deleteOrder, config)
-    .then(response => response.data.data.message)
-}
-
-// CREATE ORDER REQUEST
+// CREATE ORDER REQUEST -- VERIFICADO
 
 type response = {
     data:any,
@@ -47,8 +37,19 @@ export const CreateOrders = ( token: string, newOrder: CreateOrder ) => {
         headers : { Authorization: `Bearer ${token}` },
     }
     return axios.post<response, AxiosResponse<response>, CreateOrder>('/orders', newOrder, config) 
-    .then(response => response.data.data.message)
+    .then(response => response.data.notification.description)
 }
+
+// DELETE ORDER REQUEST 
+
+export const DeleteOrders = (token: string, deleteOrder: CreateOrder) => {
+    const config = {
+            headers: { Authorization: `Bearer ${token}`}
+    }
+    return axios.put('/orders/delete', deleteOrder, config)
+    .then(response => response.data.notification.description)
+}
+
 
 // UPDATE ORDER REQUEST
 

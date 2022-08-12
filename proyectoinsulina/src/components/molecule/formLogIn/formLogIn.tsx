@@ -10,6 +10,7 @@ const FormLogIn: FC<FormLoginData> = (props) => {
     return(
       <div>
         <TitleForm>Daily Insulins</TitleForm>
+        
         <LabelForm>User  </LabelForm> 
         <InputForm
             type='text'

@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { ButtonForm } from '../../atom/button/buttonForm';
 import { InputForm } from '../../atom/input/inputForm';
 import { LabelForm } from '../../atom/label/labelForm';
 import { TitleForm } from '../../atom/title/titleForm';
@@ -7,7 +9,7 @@ import { FormNewOrderData } from './formNewOrderData';
 const FormNewOrder: FC<FormNewOrderData> = (props) => {
     
     return(
-        <form>
+        <div>
             <TitleForm>Please Fill out the new Order form</TitleForm>
             <LabelForm>DNI:  </LabelForm>
             <InputForm
@@ -40,9 +42,10 @@ const FormNewOrder: FC<FormNewOrderData> = (props) => {
             <LabelForm>Insuline Brand</LabelForm>
             <InputForm
             type='text' value={props.newOrder.brand} onChange={event => props.setNewOrder({...props.newOrder, brand:event.target.value})} placeholder='Brand'
-            name="brand"/>
-            
-        </form>
+            name="brand"/> 
+            <ButtonForm onClick={props.orderCreated}>Send New Order</ButtonForm>
+            <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
+        </div>
     )
 }
 export default FormNewOrder

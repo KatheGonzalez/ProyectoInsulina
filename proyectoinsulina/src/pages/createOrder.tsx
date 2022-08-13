@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { CreateOrder } from '../modelsclass/createOrder';
 import FormNewOrder from '../components/molecule/newOrderForm/formNewOrder';
-import { ButtonForm } from '../components/atom/button/buttonForm';
-import { Link } from 'react-router-dom';
 import { CreateOrders } from '../services/insulineServices';
 import decodeToken from '../services/decodeToken';
 
@@ -24,11 +22,9 @@ function CreateOrderPage (){
       }
 
     return(
-        <>
-             <FormNewOrder newOrder={newOrder} setNewOrder={setNewOrder}/>
-             <ButtonForm onClick={orderCreated}>Send New Order</ButtonForm>
-             <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
-        </>
+        <FormNewOrder newOrder={newOrder} 
+        setNewOrder={setNewOrder} 
+        orderCreated={orderCreated}/>
     )
 }
 

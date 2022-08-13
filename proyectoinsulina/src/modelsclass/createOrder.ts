@@ -9,9 +9,9 @@ export class CreateOrder {
       state?: string;
       count?: number;
       brand?: string
-      date_collected? = null
+      date_collected?: string
 
-    constructor(id='', dni='', cellphone=0, full_name='', place='', date_requested='', state:'', count:0, brand='', date_collected=null){
+    constructor(id='', dni='', cellphone=0, full_name='', place='', date_requested='', state:'', count:0, brand='', date_collected=''){
         this.id = id
         this.dni = dni;
         this.cellphone = cellphone; 

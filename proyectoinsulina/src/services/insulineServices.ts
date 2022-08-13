@@ -58,7 +58,7 @@ export const UpdateOrders = (token: string, updateOrder: CreateOrder) => {
         headers : { Authorization: `Bearer ${token}`}
     }
     return axios.put('/orders/update', updateOrder, config)
-    .then(response => console.log(response))
+    .then(response => response.data.notification.description)
 }
 
 

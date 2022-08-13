@@ -1,7 +1,5 @@
 import { DeleteOrders } from "../services/insulineServices";
 import DeleteOrderForm from "../components/molecule/formDelete/formDeleteOrder";
-import { ButtonForm } from "../components/atom/button/buttonForm";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CreateOrder } from "../modelsclass/createOrder";
 import decodeToken from "../services/decodeToken";
@@ -22,13 +20,11 @@ function DeleteOrderPage () {
         }}
         
     return (
-        <>
-            <DeleteOrderForm deleteOrder={deleteOrders} setDeleteOrder={setDeleteOrders}></DeleteOrderForm>
-            <ButtonForm onClick={deleteOrderPermission}> Eliminar Orden</ButtonForm>
-            <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
-        </>
+        <DeleteOrderForm deleteOrder={deleteOrders} 
+        setDeleteOrder={setDeleteOrders} 
+        deleteOrderButton={deleteOrderPermission}/>
     ) 
 }
 
-export default DeleteOrderPage
+export default DeleteOrderPage;
 

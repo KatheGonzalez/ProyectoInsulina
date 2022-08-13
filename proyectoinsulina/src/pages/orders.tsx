@@ -25,34 +25,34 @@ const OrdersPage = () => {
 
     return (
     <div className="container-orders">
-        <table className="table-style">
+        <table>
             <thead>
                 <tr className="table-rows">
-                    <th className="table-header">Id</th><br></br>
-                    <th>Dni</th><br></br>
-                    <th>CellPhone</th><br></br>
-                    <th>Full Name</th><br></br>
-                    <th>Place</th><br></br>
-                    <th>Date_Requested</th><br></br>
-                    <th>State</th><br></br>
-                    <th>Count</th><br></br>
-                    <th>Brand</th><br></br>
-                    <th>Date_Collected</th><br></br>
+                    <th className="table-header">Id</th>
+                    <th>Dni</th>
+                    <th>CellPhone</th>
+                    <th>Full Name</th>
+                    <th>Place</th>
+                    <th>Date_Requested</th>
+                    <th>State</th>
+                    <th>Count</th>
+                    <th>Brand</th>
+                    <th>Date_Collected</th>
                 </tr>
             </thead>
-            <tbody className="table-body">
+            <tbody>
                 {orders && orders.map((order, index) =>  indexOrder !== index ? 
                 <tr key={index}>
-                    <td>{order.id}</td><br></br>
-                    <td>{order.dni}</td><br></br>
-                    <td>{order.cellphone}</td><br></br>
-                    <td>{order.full_name}</td><br></br>
-                    <td>{order.place}</td><br></br>
-                    <td>{order.date_requested}</td><br></br>
-                    <td>{order.state}</td><br></br>
-                    <td>{order.count}</td><br></br>
-                    <td>{order.brand}</td><br></br>
-                    <td>{order.date_collected}</td><br></br>
+                    <td>{order.id}</td>
+                    <td>{order.dni}</td>
+                    <td>{order.cellphone}</td>
+                    <td>{order.full_name}</td>
+                    <td>{order.place}</td>
+                    <td>{order.date_requested}</td>
+                    <td>{order.state}</td>
+                    <td>{order.count}</td>
+                    <td>{order.brand}</td>
+                    <td>{order.date_collected}</td>
                 </tr>
                 :
                 <TitleStyle>You dont have orders honey!!!</TitleStyle>

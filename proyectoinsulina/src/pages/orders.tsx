@@ -1,24 +1,27 @@
 import { useEffect, useState } from "react";
 import { TitleStyle } from "../components/atom/title/title.Style";
 import { CreateOrder } from "../modelsclass/createOrder";
-import decodeToken from "../services/decodeToken";
 import { GetOrders } from "../services/insulineServices";
-import '../components/atom/orders/orders.css';
+import "../components/atom/orders/orders.css";
+import DecodeToken from "../services/decodeToken";
 
 const OrdersPage = () => {
 
     const [orders, setOrders] = useState<CreateOrder[]>([]);  //aqui quiero agarrar todas las ordenes completas
     const [indexOrder, setIndexOrder] = useState(-1);
-    const [loading, setLoading] = useState(true)
+    const {
+        loading
+    } = DecodeToken() 
     
     useEffect(() => {      
         const {
             localValue
-        } = decodeToken() 
+        } = DecodeToken() 
         
-        const getOrders = async () => {
+        async function getOrders () {
             const orderList = await GetOrders(localValue!)
-            setOrders(orderList)
+            setOrders(orderList) // aqui supuestamente tengo todas las ordenes 
+            console.log(setOrders)
         }
         getOrders();
     }, [loading]);
@@ -27,8 +30,8 @@ const OrdersPage = () => {
     <div className="container-orders">
         <table>
             <thead>
-                <tr className="table-rows">
-                    <th className="table-header">Id</th>
+                <tr>
+                    <th>Id</th>
                     <th>Dni</th>
                     <th>CellPhone</th>
                     <th>Full Name</th>

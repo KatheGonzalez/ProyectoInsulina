@@ -5,7 +5,6 @@ import { InputFormData } from './inputFormData';
 
 export const InputForm: FC<InputFormData> = (props) => {
     return (
-        <>
             <InputStyle
                 type={props.type}
                 onChange={props.onChange}
@@ -13,8 +12,6 @@ export const InputForm: FC<InputFormData> = (props) => {
                 placeholder = {props.placeholder}
                 name = {props.name}
                 autoComplete = {props.autocomplete}
-            ></InputStyle>
-        </>
-        
+            ></InputStyle>     
     )
 }

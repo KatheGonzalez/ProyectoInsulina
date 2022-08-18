@@ -20,7 +20,7 @@ const FormUpdateOrders: FC<FormUpdateOrder> = (props) => {
             <InputForm type="text" value={props.orderUpdated.brand} onChange={event => props.setOrderUpdated({...props.orderUpdated, brand:event.target.value})} placeholder='Brand'
             name="brand"></InputForm>
             <LabelForm>Date Collected: </LabelForm>
-            <InputForm type="text" value={props.orderUpdated.date_collected} onChange={event => props.setOrderUpdated({...props.orderUpdated, date_collected:event.target.value})} placeholder='Date-Collected'
+            <InputForm type="text" value={props.orderUpdated.date_collected?.getDate()} onChange={event => props.setOrderUpdated({...props.orderUpdated, date_collected:event.target.value})} placeholder='Date-Collected'
             name="date_collected"></InputForm>
             <ButtonForm onClick={props.updateOrderButton}>Update Order</ButtonForm>
         </div>

@@ -55,7 +55,7 @@ const OrdersPage = () => {
                     <td>{order.state}</td>
                     <td>{order.count}</td>
                     <td>{order.brand}</td>
-                    <td>{order.date_collected}</td>
+                    <td>{order.date_collected?.getDate()}</td>
                 </tr>
                 :
                 <TitleStyle>You dont have orders honey!!!</TitleStyle>

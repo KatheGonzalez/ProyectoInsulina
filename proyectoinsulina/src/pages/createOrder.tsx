@@ -10,7 +10,7 @@ function CreateOrderPage (){
         localValue 
     } = decodeToken();
 
-    const [newOrder, setNewOrder] = useState(new CreateOrder('','', 0, '', '','','',0,''));
+    const [newOrder, setNewOrder] = useState(new CreateOrder('','', 0, '', '','','',0,'', ''));
 
     const orderCreated = async () => {
         const orderCreatedok = await CreateOrders(localValue!, newOrder);

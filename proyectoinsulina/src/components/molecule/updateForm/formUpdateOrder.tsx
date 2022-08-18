@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import { ButtonForm } from "../../atom/button/buttonForm";
 import { InputForm } from "../../atom/input/inputForm";
 import { LabelForm } from "../../atom/label/labelForm";
@@ -20,9 +21,11 @@ const FormUpdateOrders: FC<FormUpdateOrder> = (props) => {
             <InputForm type="text" value={props.orderUpdated.brand} onChange={event => props.setOrderUpdated({...props.orderUpdated, brand:event.target.value})} placeholder='Brand'
             name="brand"></InputForm>
             <LabelForm>Date Collected: </LabelForm>
-            <InputForm type="text" value={props.orderUpdated.date_collected?.getDate()} onChange={event => props.setOrderUpdated({...props.orderUpdated, date_collected:event.target.value})} placeholder='Date-Collected'
+            <InputForm type="date" value={props.orderUpdated.date_collected} onChange={event => props.setOrderUpdated({...props.orderUpdated, date_collected:event.target.value})} placeholder='Date-Collected'
             name="date_collected"></InputForm>
+
             <ButtonForm onClick={props.updateOrderButton}>Update Order</ButtonForm>
+            <ButtonForm onClick={()=>{}}><Link to="/Permissions">Go Back!</Link></ButtonForm>
         </div>
     )
 }

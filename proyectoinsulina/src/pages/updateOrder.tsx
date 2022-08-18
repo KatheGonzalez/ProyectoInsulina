@@ -4,13 +4,13 @@ import { CreateOrder } from '../modelsclass/createOrder';
 import decodeToken from '../services/decodeToken';
 import FormUpdateOrders from '../components/molecule/updateForm/formUpdateOrder';
 
+
 function UpdateOrderPage() {
+  const [orderUpdated, setOrderUpdated] = useState(new CreateOrder('','', 0, '', '','','',0,''));
     const{
         localValue
     } = decodeToken();
 
-  const [orderUpdated, setOrderUpdated] = useState(new CreateOrder('','', 0, '', '','','',0,''));
- 
   const updateOrder = async () => {
     const userLogin = await UpdateOrders(localValue!, orderUpdated);
     if(userLogin === 200){
@@ -21,11 +21,11 @@ function UpdateOrderPage() {
   }
 
   return (
-        <FormUpdateOrders
+      <FormUpdateOrders
         orderUpdated={orderUpdated}
         setOrderUpdated={setOrderUpdated}
         updateOrderButton={updateOrder}
-        />
+        />    
   );
 }
 

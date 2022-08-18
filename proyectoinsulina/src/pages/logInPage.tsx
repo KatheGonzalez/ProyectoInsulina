@@ -22,12 +22,11 @@ function LogInPage() {
     }
   }
 
-  return (
-        <FormLogIn 
-        userLogged={userLogged}
-        setUserLogged={setUserLogged}
-        getTokenButton={getToken}
-        />
+  return (    
+          <FormLogIn 
+          userLogged={userLogged}
+          setUserLogged={setUserLogged}
+          getTokenButton={getToken}/>  
   );
 }
 

@@ -1,5 +1,4 @@
 
-
 const Permissions  = {
     read: 'insulin_app:read_orders',
     delete: 'insulin_app:delete_orders',
@@ -7,4 +6,4 @@ const Permissions  = {
     update: 'insulin_app:update_orders'
 }
 
-export default Permissions
+export default Permissions;

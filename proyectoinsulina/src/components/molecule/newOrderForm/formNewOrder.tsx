@@ -43,8 +43,9 @@ const FormNewOrder: FC<FormNewOrderData> = (props) => {
             <InputForm
             type='text' value={props.newOrder.brand} onChange={event => props.setNewOrder({...props.newOrder, brand:event.target.value})} placeholder='Brand'
             name="brand"/> 
+            
             <ButtonForm onClick={props.orderCreated}>Send New Order</ButtonForm>
-            <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
+            <ButtonForm onClick={()=>{}}><Link to="/Permissions">Go Back!</Link></ButtonForm>
         </div>
     )
 }

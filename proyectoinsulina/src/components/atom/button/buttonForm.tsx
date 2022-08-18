@@ -4,9 +4,9 @@ import {  ButtonStyle  } from "./buttons.Style";
 
 export const ButtonForm: FC<ButtonFormData> = (props) => {
     return (
-            <ButtonStyle 
-                onClick={props.onClick}>
-                {props.children}
-            </ButtonStyle> 
-    )
+        <ButtonStyle 
+            onClick={props.onClick}>
+            {props.children}
+        </ButtonStyle> 
+)
 }

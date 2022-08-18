@@ -8,10 +8,10 @@ export class CreateOrder {
       date_requested?: string;
       state?: string;
       count?: number;
-      brand?: string
-      date_collected?: Date
+      brand?: string;
+      date_collected?: string 
 
-    constructor(id='', dni='', cellphone=0, full_name='', place='', date_requested='', state:'', count:0, brand='', date_collected = Date){
+    constructor(id='', dni='', cellphone=0, full_name='', place='', date_requested= '', state:'', count:0, brand='', date_collected = ''){
         this.id = id
         this.dni = dni;
         this.cellphone = cellphone; 
@@ -21,6 +21,6 @@ export class CreateOrder {
         this.state = state;
         this.count =  count;
         this.brand = brand;
-        this.date_collected = new Date()
+        this.date_collected = date_requested;
         }
 }

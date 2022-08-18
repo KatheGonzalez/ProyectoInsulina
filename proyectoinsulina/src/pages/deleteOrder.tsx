@@ -9,7 +9,7 @@ function DeleteOrderPage () {
         localValue,
     } = decodeToken();
     
-    const [deleteOrders, setDeleteOrders ] = useState(new CreateOrder('','', 0, '', '','','',0,''))
+    const [deleteOrders, setDeleteOrders ] = useState(new CreateOrder('','', 0, '', '','','',0,'', ''))
 
     const deleteOrderPermission = async () => {
         const orderToDelete = await DeleteOrders(localValue!, deleteOrders)
@@ -20,9 +20,9 @@ function DeleteOrderPage () {
         }}
         
     return (
-        <DeleteOrderForm deleteOrder={deleteOrders} 
-        setDeleteOrder={setDeleteOrders} 
-        deleteOrderButton={deleteOrderPermission}/>
+            <DeleteOrderForm deleteOrder={deleteOrders} 
+            setDeleteOrder={setDeleteOrders} 
+            deleteOrderButton={deleteOrderPermission}/>
     ) 
 }
 

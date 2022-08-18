@@ -17,9 +17,8 @@ const DeleteOrderForm: FC<FormDeleteData> = (props) => {
             type='text' value={props.deleteOrder.state} onChange={event => props.setDeleteOrder({...props.deleteOrder, state:event.target.value})}
             name="state"/>
         <ButtonForm onClick={props.deleteOrderButton}> Eliminar Orden</ButtonForm>
-        <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
+        <ButtonForm onClick={()=>{}}><Link to="/Permissions">Go Back!</Link></ButtonForm>
         </div>
-
     )
 }
 

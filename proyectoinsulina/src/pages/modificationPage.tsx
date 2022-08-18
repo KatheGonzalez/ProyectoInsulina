@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { ButtonForm } from '../components/atom/button/buttonForm';
-import Permissions  from '../modelsclass/permissions'
+import Permissions  from '../modelsclass/permissions';
 import decodeToken from '../services/decodeToken';
 import { TitleStyle } from '../components/atom/title/title.Style';
 

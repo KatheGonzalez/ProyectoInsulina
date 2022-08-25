@@ -11,6 +11,7 @@ function DeleteOrderPage () {
     
     const [deleteOrders, setDeleteOrders ] = useState(new CreateOrder('','', 0, '', '','','',0,'', ''))
 
+
     const deleteOrderPermission = async () => {
         const orderToDelete = await DeleteOrders(localValue!, deleteOrders)
         if(orderToDelete === 200){
@@ -20,9 +21,11 @@ function DeleteOrderPage () {
         }}
         
     return (
-            <DeleteOrderForm deleteOrder={deleteOrders} 
-            setDeleteOrder={setDeleteOrders} 
-            deleteOrderButton={deleteOrderPermission}/>
+            <DeleteOrderForm 
+                deleteOrder={deleteOrders} 
+                setDeleteOrder={setDeleteOrders} 
+                deleteOrderButton={deleteOrderPermission}
+            />      
     ) 
 }
 

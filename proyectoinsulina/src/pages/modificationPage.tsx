@@ -17,8 +17,8 @@ function PermissionsVerificationPage(){
       <h5>Those are your permissions</h5>
       {permissionsValue.includes(Permissions.read) && <ButtonForm onClick={()=>{}}><Link to="/getOrders">Get Orders</Link></ButtonForm>}
       {permissionsValue.includes(Permissions.delete) && <ButtonForm onClick={()=>{}}><Link to="/DeleteOrders">Delete Orders</Link></ButtonForm>}
-      {permissionsValue.includes(Permissions.create) && <ButtonForm onClick = {async () => await {}}><Link to="/createOrder">Create an Order</Link></ButtonForm>}
-      {permissionsValue.includes(Permissions.update) && <ButtonForm onClick = {async () => await {}}><Link to="/UpdateOrder">Update an Order</Link></ButtonForm>}
+      {permissionsValue.includes(Permissions.create) && <ButtonForm onClick = {() => {}}><Link to="/createOrder">Create an Order</Link></ButtonForm>}
+      {permissionsValue.includes(Permissions.update) && <ButtonForm onClick = {() => {}}><Link to="/UpdateOrder">Update an Order</Link></ButtonForm>}
       <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
     </div>
     )

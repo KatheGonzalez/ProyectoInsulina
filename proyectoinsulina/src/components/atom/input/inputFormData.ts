@@ -5,5 +5,6 @@ export interface InputFormData {
     placeholder?: string, 
     value?: string | undefined | number, 
     onChange?:(event: any) => any,
-    autocomplete?: string
+    autocomplete?: string,
+    required?: boolean
 }

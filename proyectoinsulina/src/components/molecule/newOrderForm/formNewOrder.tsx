@@ -7,7 +7,7 @@ import { TitleForm } from '../../atom/title/titleForm';
 import { FormNewOrderData } from './formNewOrderData';
 
 const FormNewOrder: FC<FormNewOrderData> = (props) => {
-    
+
     return(
         <div>
             <TitleForm>Please Fill out the new Order form</TitleForm>
@@ -29,13 +29,14 @@ const FormNewOrder: FC<FormNewOrderData> = (props) => {
             name="place"/>
             <LabelForm>Add Date_Requested</LabelForm>
             <InputForm
-            type='text' value={props.newOrder.date_requested} onChange={event => props.setNewOrder({...props.newOrder, date_requested:event.target.value})} placeholder='Date_Requested'
+            type='date' value={props.newOrder.date_requested} onChange={event => props.setNewOrder({...props.newOrder, date_requested:event.target.value})} placeholder='Date_Requested'
             name="date_requested"/>
             <LabelForm>State</LabelForm>
+            <select name='state'>Opcion 1</select>
             <InputForm
-            type='text' value={props.newOrder.state} onChange={event => props.setNewOrder({...props.newOrder, state:event.target.value})} placeholder='State'
+            type='select' value={props.newOrder.state} onChange={event => props.setNewOrder({...props.newOrder, state:event.target.value})} placeholder='State'
             name="state"/>
-            <LabelForm>Insuline Count</LabelForm>
+            <LabelForm>Count</LabelForm>
             <InputForm
             type='number' value={props.newOrder.count} onChange={event => props.setNewOrder({...props.newOrder, count:event.target.value})} placeholder='Count' 
             name="count"/>

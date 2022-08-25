@@ -1,21 +1,19 @@
 import styled from 'styled-components'; 
 
 export const ButtonStyle = styled.button`
-    background-color: #ACD9B2;
+    background-color: var(--purple-dark);
+    width: 200px;
+    height: 35px;
     margin-top: 10px;
-    border-radius: 8px;
+    border-radius: 20px;
     border: none;
-    color: white;
-    width: 100%;
+    color: var(--white-normal);
     cursor: pointer; 
     font-size: 16px;
     font-weight: bold;
-    font-family: 'Quicksand', sans-serif;
-    text-decoration: none;
-    height: 40px;
+    font-family: 'Roboto', sans-serif;
     &:hover,
     &:focus {
-    border: 1px solid #ACD9B2;
-    color: #ACD9B2;
+    background-color: var(--purple-darker);
   }
 `

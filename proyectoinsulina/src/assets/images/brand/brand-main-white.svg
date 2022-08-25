@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="255" height="146" viewBox="0 0 255 146">
+  <g id="Group_27" data-name="Group 27" transform="translate(-350 -284)">
+    <text id="INSULAPP" transform="translate(350 399)" fill="#fff" font-size="50" font-family="NunitoSans-Black, Nunito Sans" font-weight="800"><tspan x="0" y="0">INSUL</tspan><tspan y="0" font-family="NunitoSans-SemiBold, Nunito Sans" font-weight="600">APP</tspan></text>
+    <path id="Polygon_1" data-name="Polygon 1" d="M36.1,1.386a2,2,0,0,1,2.809,0L71.53,33.576A2,2,0,0,1,70.125,37H4.875a2,2,0,0,1-1.4-3.424Z" transform="translate(427 322)" fill="#fff"/>
+    <rect id="Rectangle_22" data-name="Rectangle 22" width="21" height="11" rx="2" transform="translate(455 322)" fill="#fff"/>
+    <line id="Line_27" data-name="Line 27" y2="49" transform="translate(465 286)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="4"/>
+    <rect id="Rectangle_23" data-name="Rectangle 23" width="75" height="5" rx="2" transform="translate(427 404)" fill="#fff"/>
+    <rect id="Rectangle_24" data-name="Rectangle 24" width="55" height="5" rx="2" transform="translate(438 425)" fill="#fff"/>
+    <rect id="Rectangle_25" data-name="Rectangle 25" width="30" height="22" rx="2" transform="translate(450 407)" fill="#fff"/>
+  </g>
+</svg>

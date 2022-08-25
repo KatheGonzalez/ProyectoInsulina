@@ -11,7 +11,7 @@ const DeleteOrderForm: FC<FormDeleteData> = (props) => {
         <LabelForm>Insert the ID you want to delete</LabelForm>
         <InputForm
             type='text' value={props.deleteOrder.id} onChange={event => props.setDeleteOrder({...props.deleteOrder, id:event.target.value})} placeholder='Id'
-            name="id"/>
+            name="id" required/>
         <LabelForm>State</LabelForm>
         <InputForm
             type='text' value={props.deleteOrder.state} onChange={event => props.setDeleteOrder({...props.deleteOrder, state:event.target.value})}

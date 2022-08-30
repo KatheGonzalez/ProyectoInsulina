@@ -1,9 +1,12 @@
 // import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { ButtonForm } from '../components/atom/button/buttonForm';
+import { CardForm } from '../components/atom/card/cardForm';
+import { LoginInfo } from '../components/atom/divStyles/backgroundOne.Style';
 import Permissions  from '../modelsclass/permissions';
 import decodeToken from '../services/decodeToken';
-import { TitleStyle } from '../components/atom/title/title.Style';
+import img from '../assets/images/icons/medicine.svg';
+
 
 function PermissionsVerificationPage(){
     
@@ -12,15 +15,20 @@ function PermissionsVerificationPage(){
     } = decodeToken();
 
     return (
-    <div>
-      <TitleStyle>Choose the modification you want to do</TitleStyle>
-      <h5>Those are your permissions</h5>
-      {permissionsValue.includes(Permissions.read) && <ButtonForm onClick={()=>{}}><Link to="/getOrders">Get Orders</Link></ButtonForm>}
-      {permissionsValue.includes(Permissions.delete) && <ButtonForm onClick={()=>{}}><Link to="/DeleteOrders">Delete Orders</Link></ButtonForm>}
-      {permissionsValue.includes(Permissions.create) && <ButtonForm onClick = {() => {}}><Link to="/createOrder">Create an Order</Link></ButtonForm>}
-      {permissionsValue.includes(Permissions.update) && <ButtonForm onClick = {() => {}}><Link to="/UpdateOrder">Update an Order</Link></ButtonForm>}
-      <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
-    </div>
+        <>
+          {permissionsValue.includes(Permissions.read) && <Link to="/getOrders">
+            <CardForm 
+                title='Crear Solicitudes' 
+                text='Solicitar recogida de tubos de insulina para que uno de nuestros agentes se dirija a recogerlo'
+                img={img}
+                rotate={330}
+            /></Link>
+        //   {permissionsValue.includes(Permissions.delete) && <Link to="/DeleteOrders">Delete Orders</Link>
+        //   {permissionsValue.includes(Permissions.create) && <Link to="/createOrder">Create an Order</Link>
+        //   {permissionsValue.includes(Permissions.update) && <Link to="/UpdateOrder">Update an Order</Link>
+        //   <ButtonForm onClick={()=>{}}><Link to="/">LogIn Page</Link></ButtonForm>
+    }
+        </>
     )
 }
 

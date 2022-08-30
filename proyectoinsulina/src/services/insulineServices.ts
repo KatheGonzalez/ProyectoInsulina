@@ -40,7 +40,7 @@ export const CreateOrders = ( token: string, newOrder: CreateOrder ) => {
     .then(response => response.data.notification.description)
 }
 
-// DELETE ORDER REQUEST 
+// DELETE ORDER REQUEST -- VERIFICADO
 
 export const DeleteOrders = (token: string, deleteOrder: CreateOrder) => {
     const config = {
@@ -51,7 +51,7 @@ export const DeleteOrders = (token: string, deleteOrder: CreateOrder) => {
 }
 
 
-// UPDATE ORDER REQUEST
+// UPDATE ORDER REQUEST -- VERIFICADO
 
 export const UpdateOrders = (token: string, updateOrder: CreateOrder) => {
     const config =  {

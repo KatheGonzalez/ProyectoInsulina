@@ -9,4 +9,4 @@ export const ButtonForm: FC<ButtonFormData> = (props) => {
             {props.children}
         </ButtonStyle> 
 )
-}
+};

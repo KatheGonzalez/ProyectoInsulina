@@ -7,4 +7,5 @@ export interface InputFormData {
     onChange?:(event: any) => any,
     autocomplete?: string,
     required?: boolean
+    className?: string
 }

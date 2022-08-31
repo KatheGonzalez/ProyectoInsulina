@@ -5,7 +5,7 @@ export const ButtonStyle = styled.button`
     width: 200px;
     height: 35px;
     margin-top: 30px;
-    border-radius: 15px;
+    border-radius: 30px;
     border: none;
     color: var(--white-normal);
     cursor: pointer; 
@@ -15,6 +15,12 @@ export const ButtonStyle = styled.button`
     &:hover,
     &:focus {
     background-color: var(--purple-darker);
+  }
+
+  &.botonlogin{
+    width: 350px;
+    height: 70px;
+    font-size: 30px;
   }
 `;
 

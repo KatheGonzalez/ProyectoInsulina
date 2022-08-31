@@ -1,55 +1,73 @@
 import { InputForm } from '../../atom/input/inputForm';
 import { ButtonForm } from '../../atom/button/buttonForm';
-import { TitleForm } from '../../atom/title/titleForm';
 import { FC } from 'react';
 import { FormLoginData } from './formLoginData';
-import { BackgroundImage, Box, DivContainer, DivPortalTitle, InfoPortal, LoginInfo } from '../../atom/divStyles/backgroundOne.Style';
-import { Links } from '../../atom/links/links.Style';
+import { BackgroundImage, Box, DivContainer, DivInfoLogin, DivPortalInfo, DivPortalTitle, DivTitlePortal, ImgLogin, ImgPortal, InfoLoginP, InfoPortal, LoginInfo } from '../../atom/divStylesLogin/backgroundOne.Style';
 import img from '../../../assets/images/ilustrations/background-shape-1.svg';
 import img2 from '../../../assets/images/ilustrations/background-shape-2.svg';
+import { LinkLogin, TitleLogin } from '../../atom/loginCard/loginCard.Style';
+import img3 from '../../../assets/images/ilustrations/insuline-pharma.svg';
+import img4 from '../../../assets/images/brand/brand-main-white.svg';
 
 const FormLogIn: FC<FormLoginData> = (props) => {
   const userChange = (event:any) => props.setUserLogged({...props.userLogged, [event.target.name]:event.target.value})
     return(
         <>
           <Box width='1650px' height='840px'>
-            <InfoPortal>
-              <DivContainer className='main-container-info-left'>
-               <DivPortalTitle className='title-portal'>Portal de usuario</DivPortalTitle>
+              <InfoPortal width='739px' height='840px'>
 
-               <div className='info-portal'>
-                  <img/>
-                  <p></p>
-               </div>
-              </DivContainer>
-            </InfoPortal>
+                <DivContainer>
+                  <DivPortalTitle>
+                    <DivTitlePortal>Portal de Usuario</DivTitlePortal>
+                  </DivPortalTitle>
 
-            <LoginInfo className='right-container'>
+                  <DivPortalInfo>
+                    <ImgLogin src={img4} alt="" />
+                    <InfoLoginP>Expertos en salud corporal y ambiental
+                      Una marca 100% Colombiana.
+                    </InfoLoginP>
+                  </DivPortalInfo>
 
-              <TitleForm>Login</TitleForm>
+                </DivContainer>
 
-              <InputForm
-                  type='text'
-                  value={props.userLogged.user}
-                  onChange={userChange}
-                  placeholder='Usuario'
-                  name= 'user'
-                  autocomplete=''/>
+                <ImgPortal src={img3} alt="imagen de inyecciones"  rotate={360}/>
 
-              <InputForm
-                type="password"
-                value={props.userLogged.password}
-                onChange={userChange}
-                placeholder='Contraseña'
-                name= 'password'
-                autocomplete=''/>
-                
-              <ButtonForm
-              onClick={props.getTokenButton}
-              >INGRESAR</ButtonForm>
+              </InfoPortal>
 
-              <Links>¿Olvidaste tu clave?</Links>
-            </LoginInfo>
+              <LoginInfo width='911px' height='840px'>
+            
+                <DivInfoLogin>
+
+                  <TitleLogin>Login</TitleLogin>
+
+                  <InputForm
+                      className='loginuser'
+                      type='text'
+                      value={props.userLogged.user}
+                      onChange={userChange}
+                      placeholder='Usuario'
+                      name= 'user'
+                      autocomplete=''/>
+
+                  <InputForm
+                    className='loginpassword'
+                    type="password"
+                    value={props.userLogged.password}
+                    onChange={userChange}
+                    placeholder='Contraseña'
+                    name= 'password'
+                    autocomplete=''/>
+                    
+                  <ButtonForm
+                  className='botonlogin'
+                  onClick={props.getTokenButton}
+                  >INGRESAR</ButtonForm>
+
+                  <LinkLogin>¿Olvidaste tu clave?</LinkLogin>
+
+                </DivInfoLogin>
+
+              </LoginInfo>
 
           </Box>
 

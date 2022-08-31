@@ -8,7 +8,7 @@ import CreateOrderPage from './pages/createOrder';
 import UpdateOrderPage from './pages/updateOrder';
 import PermissionsVerificationPage from './pages/modificationPage';
 import OrdersPage from './pages/orders';
-import { BackgroundOne } from './components/atom/divStyles/backgroundOne.Style';
+import { BackgroundOne } from './components/atom/divStylesLogin/backgroundOne.Style';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

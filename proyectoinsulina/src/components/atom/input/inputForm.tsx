@@ -13,6 +13,7 @@ export const InputForm: FC<InputFormData> = (props) => {
             name = {props.name}
             autoComplete = {props.autocomplete}
             required = {props.required}
+            className={props.className}
         ></InputStyle>     
     )
 }

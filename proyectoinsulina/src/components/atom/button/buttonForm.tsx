@@ -5,7 +5,8 @@ import {  ButtonStyle  } from "./buttons.Style";
 export const ButtonForm: FC<ButtonFormData> = (props) => {
     return (
         <ButtonStyle 
-            onClick={props.onClick}>
+            onClick={props.onClick}
+            className={props.className}>
             {props.children}
         </ButtonStyle> 
 )

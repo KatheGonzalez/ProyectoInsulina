@@ -4,7 +4,7 @@ import { CardFormData } from './cardFormData';
 
 export const CardForm: FC<CardFormData> = (props) => {
     return (
-        <Card onClick={props.onClick} >
+        <Card onClick={props.onClick}>
             <TitleCard>{props.title}</TitleCard>
             <TextCard>{props.text}</TextCard>
             <ImgCard src={props.img} alt='' rotate={props.rotate}/>

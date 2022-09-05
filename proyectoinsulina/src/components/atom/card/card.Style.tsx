@@ -7,35 +7,48 @@ export const Card = styled.div`
             0%, rgba(106, 15, 188, 1) 
             90%, rgba(143, 0, 185,1) 100%);
     position: relative;
-    width: 538px;
-    height: 246px;
-    padding: 0 40px;
-    margin-top: 70px;
+    width: 500px;
+    height: 230px;
+    padding: 0 30px;
     border-radius: 12px;
     cursor: pointer;
 `;
 
 export const TitleCard = styled.h1`
-    font-size: 50px;
+    font-size: 45px;
     font-weight: bold;
+    padding-top: 10px;
     color: var(--white-normal);
 `; 
 
 export const TextCard = styled.p`
     color: var(--white-normal);
-    font-size: 24px;
+    font-size: 25px;
     width: 386px;
-`
-export const ImgCard = styled.img<{rotate:number}>`
+    padding-top: 5px;
+`;
+
+export const ImgCard = styled.img<{rotate:number, left?:string, right?:string, top?:string, bottom?:string}>`
     width: 150px;
     height: 150px;
     position: absolute;
-    bottom: 17px;
-    right: -29px;
     ${props => props.rotate && `
         transform: rotate(${props.rotate}deg)
     `};
-`
 
+    ${props => props.left && `
+        left: ${props.left}
+    `};
 
+    ${props => props.top && `
+        top: ${props.top}
+    `};
 
+    ${props => props.right && `
+        right: ${props.right}
+    `};
+
+    ${props => props.bottom && `
+        bottom: ${props.bottom}
+    `};
+`;

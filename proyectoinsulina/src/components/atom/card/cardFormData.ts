@@ -4,5 +4,9 @@ export interface CardFormData {
     title: string,
     text: string,
     img?: string,
-    rotate: number
+    rotate: number,
+    top?: string,
+    right?: string,
+    left?: string,
+    bottom?: string
 };

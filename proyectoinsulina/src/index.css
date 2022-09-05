@@ -7,11 +7,13 @@
     --blue-darker: #0BA1D5;
     --grey-normal: #D1D1D1;
     --grey-dark: #848484;
+    --grey-middle: #A5A5A5;
     --orange-normal: #DE8948;
     --green-normal: #96C175;
     --red-normal: #D16B6B;
     --transparent-black30: #00000030;
     --transparent-black16: #00000016;
+    --shadow: #707070;
     --white-normal: #FFFFFF;
     --black-normal: #000;
 }

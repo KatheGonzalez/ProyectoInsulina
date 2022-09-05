@@ -8,7 +8,6 @@ import CreateOrderPage from './pages/createOrder';
 import UpdateOrderPage from './pages/updateOrder';
 import PermissionsVerificationPage from './pages/modificationPage';
 import OrdersPage from './pages/orders';
-import { BackgroundOne } from './components/atom/divStylesLogin/backgroundOne.Style';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,7 +16,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
      <BrowserRouter>
-      <BackgroundOne>
           <Routes>
               <Route path="/" element = {<LogInPage/>}></Route>
               <Route path="Permissions" element={<PermissionsVerificationPage/>}></Route>
@@ -26,7 +24,6 @@ root.render(
               <Route path="UpdateOrder" element = {<UpdateOrderPage/>}></Route>
               <Route path="DeleteOrders" element = {<DeleteOrderPage/>}></Route>
           </Routes> 
-        </BackgroundOne>
     </BrowserRouter>
   </React.StrictMode>
 );

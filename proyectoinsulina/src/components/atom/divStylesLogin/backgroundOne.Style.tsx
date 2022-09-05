@@ -42,8 +42,12 @@ export const Box = styled.div<{width:string, height:string}>`
     background-color: var(--white-normal);
     border-radius: 12px;
     box-shadow: 0px 10px 20px var(--transparent-black16);
-    overflow: unset;
+    overflow: hidden;
 `;
+
+
+//Informacion de la izquierda 
+
 
 export const InfoPortal = styled.div<{width:string, height:string}>`
 
@@ -61,6 +65,44 @@ export const InfoPortal = styled.div<{width:string, height:string}>`
                 90%, rgba(143, 0, 185,1) 100%);
 `;
 
+export const DivContainer = styled.div`
+   display: grid;
+   grid-template-columns: 100px 639px;
+   grid-template-rows: 400px;
+`;
+
+export const DivTitlePortal = styled.h1`
+    padding-top: 250px;
+    transform: rotate(90deg);
+    font-size: 40px;
+    color: var(--white-normal);
+    width: 320px;
+`;
+
+export const DivPortalInfo = styled.div`
+    display: flex;
+    width: 400px;
+    height: 300px;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto
+`;
+
+export const ImgLogin = styled.img`
+    width: 260px;
+    height: 145px;
+    margin-bottom: 50px;
+`;
+
+export const InfoLoginP = styled.p`
+    width: 354px;
+    height: 52px;
+    font-size: 20px;
+    color: var(--white-normal);
+    text-align: center;
+`;
+
 export const ImgPortal = styled.img<{rotate:number}>`
     width: 375px;
     height: 582px;
@@ -72,45 +114,10 @@ export const ImgPortal = styled.img<{rotate:number}>`
     `};
 `
 
-export const DivContainer = styled.div`
-   display: grid;
-   grid-template-columns: 100px 639px;
-   grid-template-rows: 400px;
-`;
 
-export const DivPortalTitle = styled.div`
-    grid-column: 1;
-`
+// parte de la derecha
 
-export const DivTitlePortal = styled.h1`
-    transform: rotate(90deg);
-    font-size: 40px;
-    color: var(--white-normal);
-`
 
-export const DivPortalInfo = styled.div`
-    grid-column: 2;
-    display: flex;
-    width: 400px;
-    height: 300px;
-    flex-flow:column;
-    justify-content: center;
-    align-items: center;
-    margin: 50px auto
-`
-
-export const ImgLogin = styled.img`
-    width: 260px;
-    height: 145px;
-    margin-bottom: 50px;
-`
-export const InfoLoginP = styled.p`
-    width: 354px;
-    height: 52px;
-    font-size: 20px;
-    color: var(--white-normal);
-    text-align: center;
-`
 export const LoginInfo = styled.div<{width:string, height:string}>`
 
    ${props => props.width && `
@@ -123,8 +130,16 @@ export const LoginInfo = styled.div<{width:string, height:string}>`
 
     grid-column: 2;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
 `;
+
+export const HelpIcon = styled.span`
+    width: 30px;
+    height: 30px;
+    color: var(--purple-dark);
+    padding-left: 835px;
+    padding-top: 5px;
+`
 
 export const DivInfoLogin = styled.div`
     display: flex;
@@ -135,5 +150,33 @@ export const DivInfoLogin = styled.div`
     height: 600px;  
     margin: auto ;
 `; 
+
+
+export const TitleLogin = styled.h1`
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--purple-dark);
+`;
+
+
+export const LinkLogin = styled.a`
+    display: block;
+    margin-top: 30px;
+    font-size: 20px;
+    color: var(--blue-dark)
+`;
+
+
+
+
+
+
+
+
+
+
+
 
 

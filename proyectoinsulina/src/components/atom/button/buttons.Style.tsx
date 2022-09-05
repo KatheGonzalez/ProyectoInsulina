@@ -22,7 +22,36 @@ export const ButtonStyle = styled.button`
     height: 70px;
     font-size: 30px;
   }
+
+  &.botonDelete{
+    width: 30px;
+    color: var(--purple-light);
+    background-color: var(--white-normal);
+    padding-left: 50px;
+  }
+
+  &.botonEditar{
+    width: 30px;
+    color: var(--blue-dark);
+    background-color: var(--white-normal);
+    padding-left: 50px;
+  }
+
+  &.botonGuardar{
+    width: 30px;
+    color: var(--purple-light);
+    background-color: var(--white-normal);
+  }
+
+  &.botoninsulines{
+    width: 350px;
+    height: 70px;
+    font-size: 30px;
+    align-self: center;
+  }
 `;
+
+
 
 
 

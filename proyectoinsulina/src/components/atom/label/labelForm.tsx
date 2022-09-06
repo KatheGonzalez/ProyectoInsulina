@@ -7,7 +7,7 @@ export const LabelForm: FC<LabelFormData> = ({children}) => {
     return (
         <LabelStyle>{children}</LabelStyle>
     )
-}
+};
 
 
 

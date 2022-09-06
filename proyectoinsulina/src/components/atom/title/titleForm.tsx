@@ -9,4 +9,4 @@ export const TitleForm: FC<TitleFormData> = (props) => {
             { props.children }
         </TitleStyle>   
     )
-}
+};

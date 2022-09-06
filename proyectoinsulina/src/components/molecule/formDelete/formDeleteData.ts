@@ -5,4 +5,4 @@ export interface FormDeleteData {
     deleteOrder:CreateOrder, 
     setDeleteOrder:Dispatch<CreateOrder>,
     deleteOrderButton: () =>Promise<any>,
-}
+};

@@ -98,6 +98,7 @@ function PermissionsVerificationPage(){
                           right={'-10px'}
                       />
               </Link>
+              
           </PermissionsContainer>
 
           <ImgToDo src={img5} alt='Todo-Image'/>

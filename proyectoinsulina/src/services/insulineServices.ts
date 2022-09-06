@@ -60,5 +60,3 @@ export const UpdateOrders = (token: string, updateOrder: CreateOrder) => {
     return axios.put('/orders/update', updateOrder, config)
     .then(response => response.data.notification.description)
 }
-
-

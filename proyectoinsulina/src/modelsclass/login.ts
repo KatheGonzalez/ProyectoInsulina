@@ -7,6 +7,6 @@ export class LogIn {
     this.user = user;
     this.password = password
   }
-}
+};
 
 

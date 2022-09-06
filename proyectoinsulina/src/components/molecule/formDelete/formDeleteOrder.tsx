@@ -1,9 +1,9 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
-import { ButtonForm } from "../../atom/button/buttonForm";
-import { InputForm } from "../../atom/input/inputForm";
-import { LabelForm } from "../../atom/label/labelForm";
-import { FormDeleteData } from "./formDeleteData";
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { ButtonForm } from '../../atom/button/buttonForm';
+import { InputForm } from '../../atom/input/inputForm';
+import { LabelForm } from '../../atom/label/labelForm';
+import { FormDeleteData } from './formDeleteData';
 
 const DeleteOrderForm: FC<FormDeleteData> = (props) => {
     return (
@@ -20,6 +20,6 @@ const DeleteOrderForm: FC<FormDeleteData> = (props) => {
         <ButtonForm onClick={()=>{}}><Link to="/Permissions">Go Back!</Link></ButtonForm>
         </div>
     )
-}
+};
 
 export default DeleteOrderForm;

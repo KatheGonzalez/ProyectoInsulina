@@ -9,5 +9,4 @@ export const ButtonForm: FC<ButtonFormData> = (props) => {
             className={props.className}>
             {props.children}
         </ButtonStyle> 
-)
-};
+)};

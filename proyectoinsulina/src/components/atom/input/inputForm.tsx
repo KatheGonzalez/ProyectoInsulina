@@ -18,4 +18,4 @@ export const InputForm: FC<InputFormData> = (props) => {
             height={props.height}
         ></InputStyle>     
     )
-}
+};

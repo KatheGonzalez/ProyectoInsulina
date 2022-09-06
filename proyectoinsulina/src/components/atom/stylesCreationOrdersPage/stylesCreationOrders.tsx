@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // background 
 
 export const ImgToDoCreationPage = styled.img`
-    position: absolute;
+    position: fixed;
     width: 400px;
     height: 450px;
     top: 600px;
@@ -14,7 +14,7 @@ export const ImgToDoCreationPage = styled.img`
     &.inyecciones{
         top: 530px;
         left: -10px;
-    }
+    };
 `;
 
 
@@ -27,8 +27,7 @@ export const ColumnInformative = styled.div`
     &.InformativeGetOrder{
         width: 400px;
         height: 700px;
-    }
-
+    };
 `;
 
 export const InfoContainer = styled.div`
@@ -37,8 +36,9 @@ export const InfoContainer = styled.div`
 
     &.InfoGetOrder{
         width: 350px;
-    }
+    };
 `;
+
 export const TitleInformation = styled.h1`
     color: var(--blue-dark);
     font-size: 32px;
@@ -49,7 +49,6 @@ export const ParrafoInformativo = styled.p`
     color: var(--grey-normal);
     font-size: 24px
 `;
-
 
 // Columna Derecha con formulario  - contenedores
 
@@ -87,8 +86,8 @@ export const CreativeFormContainer = styled.div`
         width: 1200px;
         height: 700px;
         overflow: hidden;
-    }
-`
+    };
+`;
 
 // formulario 
 
@@ -103,4 +102,4 @@ export const TituloCreation = styled.h2`
 
 export const InfoInsulines = styled.div`
     display: inline;
-`
+`;

@@ -1,9 +1,9 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
-import { ButtonForm } from "../../atom/button/buttonForm";
-import { InputForm } from "../../atom/input/inputForm";
-import { LabelForm } from "../../atom/label/labelForm";
-import { FormUpdateOrder } from "./formUpdateOrderData"
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { ButtonForm } from '../../atom/button/buttonForm';
+import { InputForm } from '../../atom/input/inputForm';
+import { LabelForm } from '../../atom/label/labelForm';
+import { FormUpdateOrder } from './formUpdateOrderData';
 
 const FormUpdateOrders: FC<FormUpdateOrder> = (props) => {
     return(

@@ -13,5 +13,5 @@ export const TitleStyle = styled.h1`
         font-size: 12px;
         align-self:flex-start;
         
-    }
-`
+    };
+`;

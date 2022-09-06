@@ -101,6 +101,7 @@ const FormNewOrder: FC<FormNewOrderData> = (props) => {
 
         <ImgToDoCreationPage className='inyecciones' src={img7} alt='insuline-group'/>
         <ImgBack src={img6} alt='ilustration'/>
+        
         </BoxPermissions>
         
     )

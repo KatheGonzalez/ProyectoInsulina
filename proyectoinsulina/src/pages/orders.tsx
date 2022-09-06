@@ -11,7 +11,8 @@ import img from '../assets/images/ilustrations/map-route.svg';
 import img4 from '../assets/images/brand/brand-secondary-color.svg';
 import img7 from '../assets/images/ilustrations/background-shape-3.svg';
 import { TituloUser } from '../components/atom/ordersStyle/ordersStyle';
-import Select from 'react-select';
+import { ActiveStates, STATES } from "../const/states";
+import { StatusComponent } from "../components/atom/validationcreateorder/validationCreateOrder";
 
 
 const OrdersPage = () => {
@@ -19,44 +20,31 @@ const OrdersPage = () => {
     const [orders, setOrders] = useState<CreateOrder[]>([]);  //aqui quiero agarrar todas las ordenes completas
     const [indexOrder, setIndexOrder] = useState(-1);
     const [loading, setLoading] = useState(true);
-    const [orderSelected, setOrderSelected] = useState(new CreateOrder('','', 0, '', '','','',0,'', ''))
+    const [orderSelected, setOrderSelected] = useState(new CreateOrder('','', 0, '', '','','CREATED',0,'', ''))
 
     const {
         localValue, 
         permissionsValue
     } = DecodeToken();
 
-    const Status:() => JSX.Element = () => {
-        const options =
-        [
-            {value: 'CREATED'},
-            {value: 'UPDATED'},
-            {value: 'COLLECTED'},
-            {value: 'VERIFIED'},
-            {value: 'DELETED'},
-        ];
-
-        return <Select options={options}/>
-    };
     
     useEffect(() => {    
         async function getOrders () {
-            const orderList = await GetOrders(localValue!)
-            setOrders(orderList) // aqui supuestamente tengo todas las ordenes 
+            const orderList:CreateOrder[] = await GetOrders(localValue!)
+            setOrders(orderList.filter(order => order.state !== 'DELETED')) // aqui supuestamente tengo todas las ordenes 
         }
         getOrders();
     }, [loading]);
 
 
     const deleteOrderForm = async (id:string) => {
-        const algo = {
+        const algo:{id:string, state:ActiveStates} = {
             id: id,
-            state: "DELETED"
+            state: 'DELETED'
         }
         await DeleteOrders(localValue!, algo)
         setLoading(!loading)
     };
-
 
     const orderSelectedd = (index:number, order: CreateOrder) => {
         setIndexOrder(index)
@@ -117,11 +105,12 @@ const OrdersPage = () => {
                             <TituloUser className="OrdersForm">{order.place}</TituloUser>
                             <TituloUser className="OrdersForm count">{order.count}</TituloUser>
                             <TituloUser className="OrdersForm brand">{order.brand}</TituloUser>
-                            <TituloUser className="OrdersForm brand">{order.state}</TituloUser>
+                            <TituloUser className="OrdersForm"><StatusComponent background={STATES[order.state!].background}>{STATES[order.state!].name}</StatusComponent></TituloUser>
                             <td>{(permissionsValue.includes(Permissions.read) && permissionsValue.includes(Permissions.delete)) &&
                             <ButtonForm className='botonDelete' onClick={()=>{deleteOrderForm(order.id!)}}><span className="material-symbols-outlined">
                             delete
                             </span></ButtonForm>}</td>
+
                             <td>{(permissionsValue.includes(Permissions.read) && permissionsValue.includes(Permissions.update)) &&
                             <ButtonForm className='botonEditar' onClick={()=>{orderSelectedd(index, order)}}><span className="material-symbols-outlined">
                             edit
@@ -137,8 +126,13 @@ const OrdersPage = () => {
                             <td>{order.place}</td>
                             <td><InputForm className='editionForm count' type='number' value={orderSelected.count} onChange={orderSelectedChangeValue} placeholder='Count' name="count"/></td>
                             <td><InputForm className='editionForm brand' type='text' value={orderSelected.brand} onChange={orderSelectedChangeValue} placeholder='Brand' name="brand"/></td>
-                            <td><InputForm className='editionForm' type="text" onChange={orderSelectedChangeValue} value={orderSelected.state}
-                            placeholder='Escoge una opcion' name="state"/></td>
+                            <td><select name='state' onChange={orderSelectedChangeValue} value={orderSelected.state}>
+                                    {Object.keys(STATES).map((state) => 
+                                    <option value={state}>
+                                        {STATES[state as ActiveStates].name}
+                                    </option>
+                                    )}
+                                </select></td>
 
                             <td><ButtonForm className='botonGuardar' onClick={()=>{updateOrderForm(orderSelected)}}><span className="material-symbols-outlined">
                             save

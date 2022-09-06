@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const InputStyle = styled.input<{width?: string, height?: string}>`
     border-radius: 12px;
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     margin: 30px;
     color: var(--grey-normal);
@@ -24,31 +23,30 @@ export const InputStyle = styled.input<{width?: string, height?: string}>`
     &.loginpassword{
         margin-bottom: 70px;
         padding-left: 10px;
-    }
+    };
 
     &.loginuser{
         padding-left: 10px;
-    }
+    };
 
     &.creationform{
         margin: 10px;
         padding-left: 10px;
-    }
+    };
 
     &.editionForm{
         border-radius: 7px;
         color: var(--grey-normal);
         color: var(--grey-dark);
-    }
+    };
 
     &.count{
         width: 78px;
         height: 30px;
-    }
+    };
 
     &.brand{
         width: 108px;
         height: 30px;
-    }
-
-`
+    };
+`;

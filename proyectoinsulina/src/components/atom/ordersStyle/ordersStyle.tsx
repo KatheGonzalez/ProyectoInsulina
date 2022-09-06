@@ -10,18 +10,18 @@ export const TituloUser = styled.th`
     &.OrdersForm{
         font-size: 15px;
         border-bottom: 1px solid var(--grey-normal) ;
-    }
+    };
 
     &.UserName{
         font-size: 15px;
-    }
+    };
 
     &.count {
         color: var(--grey-dark);
         justify-content: start;
-    }
+    };
 
     &.brand{
         color: var(--grey-dark);
-    }
+    };
 `;

@@ -139,7 +139,7 @@ export const HelpIcon = styled.span`
     color: var(--purple-dark);
     padding-left: 835px;
     padding-top: 5px;
-`
+`;
 
 export const DivInfoLogin = styled.div`
     display: flex;
@@ -151,21 +151,19 @@ export const DivInfoLogin = styled.div`
     margin: auto ;
 `; 
 
-
 export const TitleLogin = styled.h1`
     font-size: 50px;
     margin-top: 50px;
     margin-bottom: 70px;
-    font-family: 'Roboto', sans-serif;
     color: var(--purple-dark);
 `;
-
 
 export const LinkLogin = styled.a`
     display: block;
     margin-top: 30px;
     font-size: 20px;
-    color: var(--blue-dark)
+    color: var(--blue-dark);
+    cursor: pointer;
 `;
 
 

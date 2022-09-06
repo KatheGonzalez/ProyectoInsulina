@@ -28,7 +28,7 @@ export const StatusComponent = styled.div<{background:string}>`
     display: flex;
     width: 160px;
     height: 40px;
-    color: white;
+    color: var(--white-normal);
     border-radius: 35px;
     align-items: center; 
     justify-content: center;
@@ -36,3 +36,13 @@ export const StatusComponent = styled.div<{background:string}>`
         background-color: ${props.background}
     `};
 `; 
+
+export const BrandComponent = styled.div`
+    display: flex;
+    width: 160px;
+    height: 40px;
+    color: var(--white-normal);
+    border-radius: 35px;
+    align-items: center; 
+    justify-content: center;
+`;

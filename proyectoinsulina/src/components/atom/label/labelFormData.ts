@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
 export interface LabelFormData {
-    children: ReactNode
+    children: ReactNode;
+    className?: string
 };

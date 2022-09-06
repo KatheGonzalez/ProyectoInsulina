@@ -40,13 +40,4 @@ export const InputStyle = styled.input<{width?: string, height?: string}>`
         color: var(--grey-dark);
     };
 
-    &.count{
-        width: 78px;
-        height: 30px;
-    };
-
-    &.brand{
-        width: 108px;
-        height: 30px;
-    };
 `;

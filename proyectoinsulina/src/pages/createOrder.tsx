@@ -25,34 +25,31 @@ function CreateOrderPage (){
         }
 
         const orderCreatedok = await CreateOrders(localValue!, body);
-        
-
         if(orderCreatedok === 200){
             <BackgroundSuccess>
               <ValidationCreateOrder>
-                  <ValidationIcon src={img} alt='Check-success'/>
-                  <ValidationParragraph>
-                    La solicitud se ha creado con exito, nuestro equipo sera 
-                    notificado para recoger las insulinas 
-                  </ValidationParragraph> 
-              </ValidationCreateOrder>
-            </BackgroundSuccess>
-        } else {
-          <BackgroundSuccess>
-              <ValidationCreateOrder>
-                  <ValidationIcon src={img2} alt='Bad-success'/>
+                  <ValidationIcon src={img} alt='Bad-success'/>
                   <ValidationParragraph>
                     La solicitud se ha creado con exito, nuestro equipo sera 
                     notificado para recoger las insulinas
                   </ValidationParragraph>
               </ValidationCreateOrder>
             </BackgroundSuccess>
+        } else {
+          <BackgroundSuccess>
+            <ValidationCreateOrder>
+                  <ValidationIcon src={img2} alt='Bad-success'/>
+                  <ValidationParragraph>
+                    La solicitud se ha creado con exito, nuestro equipo sera 
+                    notificado para recoger las insulinas
+                  </ValidationParragraph>
+              </ValidationCreateOrder>
+          </BackgroundSuccess>
         }
       }
 
     return(
       <>
-        {}
         <FormNewOrder newOrder={newOrder} 
         setNewOrder={setNewOrder} 
         orderCreated={orderCreated}/>

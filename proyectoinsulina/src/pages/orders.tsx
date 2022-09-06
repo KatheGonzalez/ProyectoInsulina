@@ -31,7 +31,7 @@ const OrdersPage = () => {
     useEffect(() => {    
         async function getOrders () {
             const orderList:CreateOrder[] = await GetOrders(localValue!)
-            setOrders(orderList.filter(order => order.state !== 'DELETED')) // aqui supuestamente tengo todas las ordenes 
+            setOrders(orderList.filter(order => order.state !== 'DELETED')) // aqui supuestamente tengo todas las ordenes PERO DELETED NO
         }
         getOrders();
     }, [loading]);
@@ -49,13 +49,13 @@ const OrdersPage = () => {
     const orderSelectedd = (index:number, order: CreateOrder) => {
         setIndexOrder(index)
         setOrderSelected(order)
+        setLoading(!loading)
     };
 
     const updateOrderForm = async (orderUpdated: CreateOrder) => {
         await UpdateOrders(localValue!, orderUpdated)
-        setLoading(!loading)
     };
-    
+
     const orderSelectedChangeValue = (event: any) => setOrderSelected({...orderSelected, [event.target.name]:event.target.value});
 
     return (
@@ -124,8 +124,8 @@ const OrdersPage = () => {
                             </td>
                             <td>{order.cellphone}</td>
                             <td>{order.place}</td>
-                            <td><InputForm className='editionForm count' type='number' value={orderSelected.count} onChange={orderSelectedChangeValue} placeholder='Count' name="count"/></td>
-                            <td><InputForm className='editionForm brand' type='text' value={orderSelected.brand} onChange={orderSelectedChangeValue} placeholder='Brand' name="brand"/></td>
+                            <td><InputForm className='editionForm' width="78px" height="30px" type='number' value={orderSelected.count} onChange={orderSelectedChangeValue} placeholder='Count' name="count"/></td>
+                            <td><InputForm className='editionForm' width="108px" height='30px' type='text' value={orderSelected.brand} onChange={orderSelectedChangeValue} placeholder='Brand' name="brand"/></td>
                             <td><select name='state' onChange={orderSelectedChangeValue} value={orderSelected.state}>
                                     {Object.keys(STATES).map((state) => 
                                     <option value={state}>

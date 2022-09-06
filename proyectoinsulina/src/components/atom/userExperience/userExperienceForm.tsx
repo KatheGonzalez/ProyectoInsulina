@@ -1,6 +1,6 @@
 
 import { BackgroundSuccess, ConfirFail, IconConfirmation, InfoConfir } from './userExperienceStyle';
-import img2 from '../../../assets/images/icons/success.svg';
+import img2 from '../../../assets/images/icons/fail.svg';
 
 export const Confirmation = () => {
     return (

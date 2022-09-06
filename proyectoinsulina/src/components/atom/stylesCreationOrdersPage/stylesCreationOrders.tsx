@@ -21,7 +21,7 @@ export const ImgToDoCreationPage = styled.img`
 // column informative
 
 export const ColumnInformative = styled.div`
-    width: 920px;
+    width: 30%;
     height: 717px;
 
     &.InformativeGetOrder{
@@ -53,24 +53,15 @@ export const ParrafoInformativo = styled.p`
 // Columna Derecha con formulario  - contenedores
 
 export const ColumnCreativeForm = styled.div`
-    width: 1000px;
+    width: 70%;
     height: 800px;
-    justify-items: center;
+    padding-left: 120px;
 
     &.OrdersContainer{
         padding-left: 140px;
     }
 `;
 
-export const Leash = styled.p`
-    display: inline;
-    width: 350px;
-    height: 80px;
-    padding-left: 50px;
-    background: var(--purple-darker);
-    color: var(--white-normal);
-    font-size: 18px;
-`;
 
 export const CreativeFormContainer = styled.div`
     position: relative;
@@ -93,6 +84,9 @@ export const CreativeFormContainer = styled.div`
 
 export const TituloCreation = styled.h2`
     font-size: 24px;
+    width: 500px;
+    height: 30px;
+
     color: var(--grey-middle);
 
     &.titlegrey{
@@ -101,5 +95,48 @@ export const TituloCreation = styled.h2`
 `;
 
 export const InfoInsulines = styled.div`
-    display: inline;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
 `;
+
+export const Leash = styled.h1`
+    position: fixed;
+    right: 146px;
+    top: 140px;
+    width: 150px;
+    height: 50px;
+    background: var(--purple-dark);
+`;
+
+export const InfoTag = styled.span`
+    color: var(--white-normal);
+    font-size: 18px;
+    padding: 25px;
+
+`;
+
+export const Triangle = styled.div`
+    position: fixed;
+    right: 140.5px;
+    top: 185px;
+    width: 0;
+    height: 0;
+    border: 30px solid transparent;
+    border-top: 0;
+    border-bottom: 50px solid var(--purple-darker);
+    transform: rotate(90deg);
+`;
+
+export const Botonguardar = styled.div`
+    padding: 0 250px;
+`;
+
+export const Separacion = styled.div`
+    border-right: 2px solid var(--grey-normal);
+`;
+
+export const Separaciondos = styled.div`
+    display: flex;
+    padding-left: 10px;
+`

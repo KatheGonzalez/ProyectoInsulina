@@ -1,5 +1,6 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
+// Esto es un template no un atomo**
 export const TituloUser = styled.th`
     width: 86px;
     height: 34px;

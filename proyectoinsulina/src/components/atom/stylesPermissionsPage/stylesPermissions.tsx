@@ -1,5 +1,6 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
+// Esto es un template no un atomo**
 export const BoxPermissions = styled.div`
     position: relative;
     display: grid;
@@ -37,7 +38,7 @@ export const ImgBack = styled.img`
     transform: rotate(360deg);
 `;
 
-// NAV BAR 
+// NAV BAR
 
 export const NavBarPermissions = styled.nav`
    grid-column-start: 1;
@@ -71,7 +72,7 @@ export const Linksnavbar = styled.a`
     };
 `;
 
-// Parte Left  
+// Parte Left
 
 export const InfoUserSection = styled.div`
     display: grid;
@@ -97,9 +98,9 @@ export const NameUser = styled.p`
 `;
 
 export const UserImageIcon = styled.img`
-    padding-top: 60px;
-    padding-left: 60px;
-`; 
+  padding-top: 60px;
+  padding-left: 60px;
+`;
 
 export const Connection = styled.div`
     width: 300px;
@@ -114,7 +115,7 @@ export const BoldTitle = styled.span`
     color: var(--grey-dark);
 `;
 
-// Right Part 
+// Right Part
 
 export const PermissionsContainer = styled.div`
     display: flex;

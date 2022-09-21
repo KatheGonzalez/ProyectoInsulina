@@ -1,5 +1,6 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
+// Esto es un template no un atomo**
 export const BackgroundOne = styled.div`
     display: flex;
     width: 100%;
@@ -36,17 +37,18 @@ export const Box = styled.div<{width:string, height:string}>`
         height: ${props.height}
     `};
 
-    grid-template-columns: 2fr 4fr;
-    grid-template-rows: auto;
-    margin: auto;
-    background-color: var(--white-normal);
-    border-radius: 12px;
-    box-shadow: 0px 10px 20px var(--transparent-black16);
-    overflow: hidden;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: auto;
+  margin: auto;
+  background-color: var(--white-normal);
+  border-radius: 12px;
+  // al poner estilos con 0, no es necesario poner la medida
+  box-shadow: 0 10px 20px var(--transparent-black16);
+  overflow: hidden;
 `;
 
 
-//Informacion de la izquierda 
+//Informacion de la izquierda
 
 
 export const InfoPortal = styled.div<{width:string, height:string}>`
@@ -142,14 +144,14 @@ export const HelpIcon = styled.span`
 `;
 
 export const DivInfoLogin = styled.div`
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-    height: 600px;  
-    margin: auto ;
-`; 
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 600px;
+  margin: auto;
+`;
 
 export const TitleLogin = styled.h1`
     font-size: 50px;

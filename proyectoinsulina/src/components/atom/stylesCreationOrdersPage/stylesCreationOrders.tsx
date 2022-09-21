@@ -1,20 +1,21 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
-// background 
-
+// background
+// Esto es un template no un atomo**
 export const ImgToDoCreationPage = styled.img`
-    position: fixed;
-    width: 400px;
-    height: 450px;
-    top: 600px;
-    left: 10px;
-    transform: rotate(360deg);
-    z-index: 2;
+  position: fixed;
+  width: 400px;
+  height: 450px;
+  top: 600px;
+  left: 10px;
+  transform: rotate(360deg);
+  z-index: 2;
 
-    &.inyecciones{
-        top: 530px;
-        left: -10px;
-    };
+  &.inyecciones {
+    top: 530px;
+    left: -10px;
+  }
+;
 `;
 
 
@@ -64,23 +65,25 @@ export const ColumnCreativeForm = styled.div`
 
 
 export const CreativeFormContainer = styled.div`
-    position: relative;
-    width: 800px;
-    height: 650px;
-    padding: 30px 20px;
-    box-shadow: 0px 10px 20px var(--transparent-black30);
-    border-radius: 12px;
-    margin: 0;
-    overflow: hidden;
+  position: relative;
+  width: 800px;
+  height: 650px;
+  padding: 30px 20px;
+  // al poner estilos con 0, no es necesario poner la medida
+  box-shadow: 0 10px 20px var(--transparent-black30);
+  border-radius: 12px;
+  margin: 0;
+  overflow: hidden;
 
-    &.GetOrderContainer{
-        width: 1200px;
-        height: 700px;
-        overflow: hidden;
-    };
+  &.GetOrderContainer {
+    width: 1200px;
+    height: 700px;
+    overflow: hidden;
+  }
+;
 `;
 
-// formulario 
+// formulario
 
 export const TituloCreation = styled.h2`
     font-size: 24px;

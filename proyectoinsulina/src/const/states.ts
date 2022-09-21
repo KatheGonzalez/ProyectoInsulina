@@ -5,12 +5,12 @@ export const STATES:Record<ActiveStates, StateValues> = {
     COLLECTED: {name: 'Obtenida', background: 'var(--purple-light)'},
     VERIFIED: {name: 'Verificada', background: 'var(--green-normal)'},
     DELETED: {name: 'Eliminado', background: 'var(--black-normal)'}
-};
+}
 
-export type ActiveStates = 'CREATED' | 'ASSIGNED' | 'COLLECTED' | 'VERIFIED' | 'DELETED' ; 
+export type ActiveStates = 'CREATED' | 'ASSIGNED' | 'COLLECTED' | 'VERIFIED' | 'DELETED';
 
 interface StateValues {
-    name:string, 
-    background:string
-};
+    name: string,
+    background: string
+}
 

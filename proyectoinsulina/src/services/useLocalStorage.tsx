@@ -1,22 +1,25 @@
 import { useState } from 'react';
 
-export function useLocalStorage (key: any, initialValue: any){
+// No ANY!
+export function useLocalStorage(key: string, initialValue: any) {
     const [storedValue, setStoredValue] = useState(() => {
         try {
             const item = window.localStorage.getItem(key);
-            return item ? item : initialValue
+            // Puntos y comas
+            return item ? item : initialValue;
         } catch (error) {
-            return initialValue
+            // Puntos y comas
+            return initialValue;
         }
     })
 
-    const setValue: (value:string | readonly string [] | undefined) => void = value => {
-        try{
-            setStoredValue(value)
-            window.localStorage.setItem(key, value as string) 
-        }catch (error){
-            console.error(error)
+    const setValue: (value: string) => void = value => {
+        try {
+            setStoredValue(value);
+            window.localStorage.setItem(key, value);
+        } catch (error) {
+            console.error(error);
         }
     }
-    return [storedValue, setValue]   
+    return [storedValue, setValue];
 }

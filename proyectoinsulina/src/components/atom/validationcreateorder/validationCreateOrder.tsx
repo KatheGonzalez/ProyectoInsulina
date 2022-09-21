@@ -1,4 +1,4 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 export const BackgroundSuccess = styled.div`
     width: 100%;
@@ -25,24 +25,15 @@ export const ValidationParragraph = styled.p`
 `;
 
 export const StatusComponent = styled.div<{background:string}>`
-    display: flex;
-    width: 160px;
-    height: 40px;
-    color: var(--white-normal);
-    border-radius: 35px;
-    align-items: center; 
-    justify-content: center;
-    ${props => props.background && `
+  display: flex;
+  width: 160px;
+  height: 40px;
+  color: var(--white-normal);
+  border-radius: 35px;
+  align-items: center;
+  justify-content: center;
+  ${props => props.background && `
         background-color: ${props.background}
     `};
-`; 
-
-export const BrandComponent = styled.div`
-    display: flex;
-    width: 160px;
-    height: 40px;
-    color: var(--white-normal);
-    border-radius: 35px;
-    align-items: center; 
-    justify-content: center;
 `;
+// Borrar lo que no se usa
